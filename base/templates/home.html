@@ -1,7 +1,6 @@
 {% load static %}
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,31 +9,28 @@
 <title>Ritesh Portfolio</title>
 
 <!-- Tailwind -->
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<!-- Smooth Scroll -->
 
 <style>
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 /* Fade animation */
 .fade{
-opacity:0;
-transform:translateY(30px);
-transition:all 0.8s ease;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
 }
 
 .fade.show{
-opacity:1;
-transform:translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 
 <!-- Font Awesome -->
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -42,67 +38,61 @@ transform:translateY(0);
 <body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
 
 <!-- NAVBAR -->
-
-<nav class="flex justify-between items-center px-10 py-4 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+<nav class="flex justify-between items-center px-6 md:px-10 py-4 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
 
 <h2 class="text-2xl font-bold text-sky-400">Ritesh</h2>
 
-<ul class="flex gap-8 text-lg">
-<li><a href="#home" class="hover:text-sky-400 transition">Home</a></li>
-<li><a href="#about" class="hover:text-sky-400 transition">About</a></li>
-<li><a href="#education" class="hover:text-sky-400 transition">Education</a></li>
-<li><a href="#skills" class="hover:text-sky-400 transition">Skills</a></li>
+<!-- Hamburger Menu for Mobile -->
+<div class="md:hidden">
+  <button id="menu-btn" class="focus:outline-none">
+    <i class="fa fa-bars text-2xl text-white"></i>
+  </button>
+</div>
 
-<li><a href="#contact" class="hover:text-sky-400 transition">Contact</a></li>
+<!-- Menu -->
+<ul id="menu" class="hidden md:flex flex-col md:flex-row gap-6 md:gap-8 text-lg mt-4 md:mt-0">
+  <li><a href="#home" class="hover:text-sky-400 transition block md:inline">Home</a></li>
+  <li><a href="#about" class="hover:text-sky-400 transition block md:inline">About</a></li>
+  <li><a href="#education" class="hover:text-sky-400 transition block md:inline">Education</a></li>
+  <li><a href="#skills" class="hover:text-sky-400 transition block md:inline">Skills</a></li>
+  <li><a href="#contact" class="hover:text-sky-400 transition block md:inline">Contact</a></li>
 </ul>
 
 </nav>
 
 <!-- HOME -->
-
-<section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-around px-10 fade">
-
-
+<section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-around px-6 md:px-10 fade">
 
 <div class="mt-10 md:mt-0">
-
 <img src="{% static 'images/pfp.jpeg' %}"
-class="w-72 h-72 rounded-full border-4 border-sky-500 object-cover hover:scale-105 transition duration-500 shadow-xl">
-
+class="w-48 h-48 md:w-72 md:h-72 rounded-full border-4 border-sky-500 object-cover hover:scale-105 transition duration-500 shadow-xl">
 </div>
-<div class="text-center md:text-left">
 
+<div class="text-center md:text-left mt-8 md:mt-0">
     <h6 class="text-gray-400">Hi, I'm</h6>
-    
-    <h1 class="text-5xl md:text-6xl font-bold mt-2">
+    <h1 class="text-4xl md:text-6xl font-bold mt-2">
          <span class="text-sky-400">Ritesh Solanke</span>
-        </h1>
-    
-        <h3 class="text-xl text-sky-400 mt-3">Aspiring<br>
-            <span id="typing" class="text-sky-400"></span>
-            </h3>
-    
+    </h1>
+    <h3 class="text-xl text-sky-400 mt-3">Aspiring<br>
+        <span id="typing" class="text-sky-400"></span>
+    </h3>
     <a href="{% static 'pdf/resume.pdf' %}" target="_blank">
-    
-    <button class="mt-6 bg-sky-500 px-7 py-3 rounded-lg hover:bg-sky-600 hover:scale-105 transition duration-300 shadow-lg">
+    <button class="mt-6 bg-sky-500 px-6 md:px-7 py-3 rounded-lg hover:bg-sky-600 hover:scale-105 transition duration-300 shadow-lg">
     Resume
     </button>
-    
     </a>
-    
-    </div>
+</div>
 
 </section>
 
 <!-- ABOUT -->
+<section id="about" class="py-16 md:py-24 bg-slate-900 text-center px-6 fade">
 
-<section id="about" class="py-24 bg-slate-900 text-center px-6 fade">
-
-<h1 class="text-4xl font-bold mb-8 text-sky-400">
+<h1 class="text-3xl md:text-4xl font-bold mb-8 text-sky-400">
 About Me
 </h1>
 
-<p class="max-w-2xl mx-auto text-gray-300 leading-relaxed">
+<p class="max-w-xl md:max-w-2xl mx-auto text-gray-300 leading-relaxed">
 Hello! I'm Ritesh Solanke, an aspiring Data Scientist passionate about 
 Python, Machine Learning, and building intelligent solutions using data.
 I enjoy learning new technologies and creating impactful projects.
@@ -111,57 +101,52 @@ I enjoy learning new technologies and creating impactful projects.
 </section>
 
 <!-- EDUCATION -->
+<section id="education" class="py-16 md:py-24 px-6 fade">
 
-<section id="education" class="py-24 px-6 fade">
+<h1 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">
+Education
+</h1>
 
-    <h1 class="text-4xl font-bold text-center mb-12 text-sky-400">
-    Education
-    </h1>
-    
-    <div class="max-w-3xl mx-auto bg-slate-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transition space-y-6">
-    
-    <!-- BTECH -->
-    
-    <div>
-    <h2 class="text-2xl font-semibold text-sky-400">
-    B.Tech in Information Technology
-    </h2>
-    
-    <p class="text-gray-400 mt-2 leading-relaxed">
-    My undergraduate program in Information Technology provided a strong foundation in
-    computer science concepts including programming, data structures, algorithms,
-    database management systems, operating systems, and computer networks.  
-    The program helped me develop strong problem-solving abilities and software
-    development skills while working with modern technologies.
-    </p>
-    </div>
-    
-    <!-- MINOR -->
-    
-    <div>
-    <h2 class="text-2xl font-semibold text-sky-400">
-    Minor in Data Science
-    </h2>
-    
-    <p class="text-gray-400 mt-2 leading-relaxed">
-        I extensively studied subjects such as Regression, Machine Learning, Artificial Intelligence and
-        Data Engineering. These courses equipped me with a
-        solid foundation in statistical analysis, predictive modeling, and big data technologies.
-    </p>
-    </div>
-    
-    </div>
-    
-    </section>
+<div class="max-w-xl md:max-w-3xl mx-auto bg-slate-800 p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl space-y-6">
+
+<!-- BTECH -->
+<div>
+<h2 class="text-2xl font-semibold text-sky-400">
+B.Tech in Information Technology
+</h2>
+<p class="text-gray-400 mt-2 leading-relaxed">
+My undergraduate program in Information Technology provided a strong foundation in
+computer science concepts including programming, data structures, algorithms,
+database management systems, operating systems, and computer networks.  
+The program helped me develop strong problem-solving abilities and software
+development skills while working with modern technologies.
+</p>
+</div>
+
+<!-- MINOR -->
+<div>
+<h2 class="text-2xl font-semibold text-sky-400">
+Minor in Data Science
+</h2>
+<p class="text-gray-400 mt-2 leading-relaxed">
+I extensively studied subjects such as Regression, Machine Learning, Artificial Intelligence and
+Data Engineering. These courses equipped me with a
+solid foundation in statistical analysis, predictive modeling, and big data technologies.
+</p>
+</div>
+
+</div>
+
+</section>
+
 <!-- SKILLS -->
+<section id="skills" class="py-16 md:py-24 px-6 fade">
 
-<section id="skills" class="py-24 px-6 fade">
-
-<h1 class="text-4xl font-bold text-center mb-12 text-sky-400">
+<h1 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">
 Skills
 </h1>
 
-<div class="max-w-xl mx-auto space-y-8">
+<div class="max-w-md md:max-w-xl mx-auto space-y-6">
 
 <div>
 <p class="mb-2">Python</p>
@@ -176,26 +161,29 @@ Skills
 <div class="bg-green-500 h-3 rounded-full w-3/4 transition-all duration-1000"></div>
 </div>
 </div>
-<div>
-    <p class="mb-2">Machine Learning</p>
-    <div class="w-full bg-gray-700 rounded-full h-3">
-    <div class="bg-sky-500 h-3 rounded-full w-1/5 transition-all duration-1000"></div>
-    </div>
-    </div>
-    <div>
-        <p class="mb-2">Data science</p>
-        <div class="w-full bg-gray-700 rounded-full h-3">
-        <div class="bg-sky-500 h-3 rounded-full w-1/5 transition-all duration-1000"></div>
-        </div>
-        </div>
-        <div>
-            <p class="mb-2">Data Structures & Algorithms</p>
-            <div class="w-full bg-gray-700 rounded-full h-3">
-            <div class="bg-yellow-200 h-3 rounded-full w-3/6 transition-all duration-1000"></div>
-            </div>
-            </div>
 
-<p class="text-gray-400 text-center">
+<div>
+<p class="mb-2">Machine Learning</p>
+<div class="w-full bg-gray-700 rounded-full h-3">
+<div class="bg-sky-500 h-3 rounded-full w-1/5 transition-all duration-1000"></div>
+</div>
+</div>
+
+<div>
+<p class="mb-2">Data Science</p>
+<div class="w-full bg-gray-700 rounded-full h-3">
+<div class="bg-sky-500 h-3 rounded-full w-1/5 transition-all duration-1000"></div>
+</div>
+</div>
+
+<div>
+<p class="mb-2">Data Structures & Algorithms</p>
+<div class="w-full bg-gray-700 rounded-full h-3">
+<div class="bg-yellow-200 h-3 rounded-full w-3/6 transition-all duration-1000"></div>
+</div>
+</div>
+
+<p class="text-gray-400 text-center mt-4">
 Still learning and improving every day 🚀
 </p>
 
@@ -203,81 +191,61 @@ Still learning and improving every day 🚀
 
 </section>
 
-
-
 <!-- CONTACT -->
+<section id="contact" class="py-16 md:py-24 px-6 fade">
 
-<section id="contact" class="py-24 px-6 fade">
-
-<h1 class="text-4xl font-bold text-center mb-12 text-sky-400">
+<h1 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">
 Contact Me
 </h1>
-<h3 class="text-gray-400 mt-2 leading-relaxed text-center">Mail:<a href="mailto:riteshr.solanke@gmail.com">riteshr.solanke@gmail.com</a></h3>
 
-
+<h3 class="text-gray-400 mt-2 leading-relaxed text-center">
+Mail: <a href="mailto:riteshr.solanke@gmail.com" class="hover:text-sky-400 transition">riteshr.solanke@gmail.com</a>
+</h3>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer class="bg-slate-900 text-center py-6">
-
 <p class="text-gray-400">
 © Ritesh Solanke
 </p>
-
 <div class="mt-3 text-xl space-x-6">
-
 <a href="https://www.linkedin.com/in/ritesh-solanke/" class="hover:text-sky-400 transition">
 <i class="fa-brands fa-linkedin"></i>
 </a>
-
 <a href="https://github.com/riteshrsolanke" class="hover:text-sky-400 transition">
 <i class="fa-brands fa-github"></i>
 </a>
-
 </div>
-
 </footer>
 
-<!-- Fade Animation Script -->
-
-
-    <script>
-
+<!-- Scripts -->
+<script>
 var typed = new Typed("#typing", {
-strings: [
-"Data Scientist",
-"Python Developer",
-"Machine Learning Enthusiast",
-"Django Developer"
-],
-
-typeSpeed: 60,
-backSpeed: 40,
-loop: true,
-startDelay: 500
-
+  strings: ["Data Scientist", "Python Developer", "Machine Learning Enthusiast", "Django Developer"],
+  typeSpeed: 60,
+  backSpeed: 40,
+  loop: true,
+  startDelay: 500
 });
 
-
-
+// Fade-in animation
 const faders = document.querySelectorAll(".fade");
-
 const appear = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
 });
-
-});
-
 faders.forEach(el => appear.observe(el));
 
+// Mobile Navbar toggle
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
 </script>
 
 </body>
